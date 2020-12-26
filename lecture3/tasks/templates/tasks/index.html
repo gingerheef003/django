@@ -9,5 +9,7 @@
             <li>No tasks</li>
         {% endfor %}
     </ul>
-    <p><a href="{% url 'tasks:add' %}">Add a new task</a></p>
+    <p><a href="{% url 'tasks:add' %}"><button>Add a new task</button></a></p>
+    <p><a href="{% url 'tasks:clear' %}"><button>Clear Task</button></a></p>
+    <p><a href="{% url 'tasks:clearall'%}"><button>Clear all tasks</button></a></p>
 {% endblock %}

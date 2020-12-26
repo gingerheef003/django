@@ -31,3 +31,11 @@ def add(request):
     return render(request, "tasks/add.html", {
         "form": NewTaskForm()
     })
+
+def clear(request):
+    request.session["tasks"] = request.session["tasks"][:len(request.session["tasks"])-1]
+    return HttpResponseRedirect(reverse("tasks:index"))
+
+def clearall(request):
+    request.session["tasks"] = []
+    return HttpResponseRedirect(reverse("tasks:index"))
